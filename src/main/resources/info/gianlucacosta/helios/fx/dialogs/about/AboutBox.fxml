@@ -40,10 +40,6 @@
                     <children>
                         <Button maxWidth="1.7976931348623157E308" minHeight="40.0" minWidth="150.0"
                                 mnemonicParsing="false" onAction="#showWebsite" text="Website" HBox.hgrow="ALWAYS"/>
-                        <Button fx:id="showFacebookPageButton" maxWidth="1.7976931348623157E308" minHeight="40.0"
-                                minWidth="150.0"
-                                mnemonicParsing="false" onAction="#showFacebookPage" text="Facebook page"
-                                HBox.hgrow="ALWAYS"/>
                     </children>
                 </HBox>
             </children>

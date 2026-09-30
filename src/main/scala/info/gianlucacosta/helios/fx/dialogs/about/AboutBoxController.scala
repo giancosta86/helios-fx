@@ -37,21 +37,11 @@ class AboutBoxController {
 
 
     mainIconImageView.setImage(appInfo.getMainIconImage(128))
-
-    if (appInfo.facebookPage == null || appInfo.facebookPage.isEmpty) {
-      showFacebookPageButton.visible =
-        false
-    }
   }
 
 
   def showWebsite() {
     DesktopUtils.openBrowser(appInfo.website)
-  }
-
-
-  def showFacebookPage() {
-    DesktopUtils.openBrowser(appInfo.facebookPage)
   }
 
 
@@ -69,9 +59,6 @@ class AboutBoxController {
 
   @FXML
   var additionalInfoLabel: javafx.scene.control.Label = _
-
-  @FXML
-  var showFacebookPageButton: javafx.scene.control.Button = _
 
   @FXML
   var mainIconImageView: javafx.scene.image.ImageView = _
