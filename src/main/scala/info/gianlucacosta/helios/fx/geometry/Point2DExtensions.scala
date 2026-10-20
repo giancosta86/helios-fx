@@ -62,5 +62,14 @@ class Point2DExtensions private[fx](point: Point2D) extends Point2D(point.x, poi
     * @return
     */
   def clip(dimension: Dimension2D): Point2D =
-  clip(dimension.width, dimension.height)
+    clip(dimension.width, dimension.height)
+
+  /**
+   * Returns a new point, whose coordinates are non-negative.
+   */
+  def nonNegative: Point2D =
+    new Point2D(
+      math.max(point.x, 0),
+      math.max(point.y, 0)
+    )
 }
