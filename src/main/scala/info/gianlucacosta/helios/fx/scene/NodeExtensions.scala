@@ -2,10 +2,12 @@ package info.gianlucacosta.helios.fx.scene
 
 import java.io.OutputStream
 import javafx.embed.swing.SwingFXUtils
-import javax.imageio.ImageIO
+import scalafx.scene.input.MouseEvent
 
+import javax.imageio.ImageIO
 import scala.language.implicitConversions
 import scalafx.scene.{Node, SnapshotParameters}
+import scalafx.Includes._
 
 /**
   * Generic FX node extensions
@@ -31,5 +33,16 @@ class NodeExtensions private[fx](node: Node) {
       format,
       targetStream
     )
+  }
+
+  /**
+   * Consumes mouse events, so that they won't bubble up to parent nodes.
+   */
+  def consumeMouseEvents(): Unit = {
+    node.handleEvent(MouseEvent.Any) {
+      (mouseEvent: MouseEvent) => {
+        mouseEvent.consume()
+      }
+    }
   }
 }
